@@ -36,7 +36,7 @@ function initGame(level) {
         MINES: 30
     }]
     gCurrLevelIdx = level
-    gGame.shownCount = gLevels[gCurrLevelIdx].size** - gLevels[gCurrLevelIdx].mines
+    gGame.shownCount = gLevels[gCurrLevelIdx].size ** -gLevels[gCurrLevelIdx].mines
     gGame.markedCount = 0;
     gBoard = buildBoard();
     renderBoard();
@@ -82,38 +82,20 @@ function renderBoard() {
     elBoard.innerHTML = strHtml;
 }
 
+
 function setMinesNegsCount(cellI, cellJ) {
-    // var minesAroundCount = 0;
-    // board[cellI][cellJ].minesAroundCount
     for (var i = cellI - 1; i <= cellI + 1; i++) {
         if (i < 0 || i >= gBoard.length) continue;
         for (var j = cellJ - 1; j <= cellJ + 1; j++) {
             if (i === cellI && j === cellJ) continue;
             if (j < 0 || j >= gBoard[i].length) continue;
-
             if (gBoard[i][j].isMine) {
                 gBoard[cellI][cellJ].minesAroundCount += 1;
             }
         }
     }
-    // console.log('minesAroundCount', minesAroundCount)
-    // return minesAroundCount;
 }
 
-// function setMinesNegsCount(board, cellI, cellJ) {
-// board[cellI][cellJ].minesAroundCount = minesAroundCount;
-//     for (var i = cellI - 1; i <= cellI + 1; i++) {
-//         if (i < 0 || i >= board.length) continue;
-//         for (var j = cellJ - 1; j <= cellJ + 1; j++) {
-//             if (i === cellI && j === cellJ) continue;
-//             if (j < 0 || j >= board[i].length) continue;
-
-//             if (board[i][j].isMine) minesAroundCount++
-//         }
-//     }
-//     // console.log('minesAroundCount', minesAroundCount)
-//     return minesAroundCount;
-// }
 
 function cellClicked(elCell, i, j, ev) {
     var clickedCell = gBoard[i][j]
@@ -147,12 +129,15 @@ function cellClicked(elCell, i, j, ev) {
         }
         if (clickedCell.isMine) {
             elCell.innerText = MINE;
-            // alert('GAME OVER!');
-            // stopTimer()
-            // gGame.isOn = false
+            gameOverBaby()
+            stopTimer()
+            gGame.isOn = false
         }
-
     }
+}
+
+function gameOverBaby(){
+    document.querySelector('.win-modal')
 }
 
 
@@ -190,17 +175,18 @@ function stopTimer() {
 
 // }
 
-expandShown()
-function expandShown(board, elCell, i, j) {
-   var dirctionsCount = setMinesNegsCount(elCell)
+// expandShown()
+// function expandShown(board, elCell, i, j) {
+//    var dirctionsCount = setMinesNegsCount(elCell)
 
-}
+// }
 
-openNegCell();
-function openNegCell() {
-    dirctionsCount--;
-    if (dirctionsCount < 1) return;
-    console.log('open');
-    openNegCell();
-    console.log('stop open');
-}
+// openNegCell();
+
+// function openNegCell(board, elCell, i, j) {
+//     i--;
+//     if (elCell.minesAroundCount < 1) return;
+//     console.log('open');
+//     openNegCell();
+//     console.log('stop open');
+// }
