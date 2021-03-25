@@ -1,0 +1,16 @@
+.board {
+    background-color: rgb(18, 1, 255);
+    border-color: rgb(229, 255, 0);
+    width: 400px;
+    height: 400px;
+    
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border-color: rgb(229,255,0)  
+}
+/* .mine{
+    background-color: red;
+} */
