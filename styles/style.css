@@ -1,4 +1,6 @@
-
+*{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 body {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
@@ -24,9 +26,12 @@ img{
 }
 
 .btn{
+    font: 1em sans-serif;
     margin: auto;
     padding: 10px;
-
+    border: 0.3px dashed black;
+    border-radius: 50px;
+    background-color: transparent;
 }
 
 .board {

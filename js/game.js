@@ -76,7 +76,6 @@ function buildBoard() {
             };
         }
     }
-
     return board;
 }
 
@@ -103,9 +102,8 @@ function renderObject(status) {
             gameElement = HINT
             levelKeyObject = gLevels[gCurrLevelIdx].HINT
             break;
-            case 'SAFE-CLICK':
-                alert('under construction..⚠')
-                break;
+            // case 'SAFE-CLICK':
+                // break;
                 case 'LIFE':
                     el = elLife
                     gameElement = LIFE
@@ -171,6 +169,7 @@ function cellClicked(elCell, i, j, ev) {
             gLevels[gCurrLevelIdx].LIFE--
             boomSound.play()
             renderObject('LIFE')
+            gGame.shownCount--
             if (gLevels[gCurrLevelIdx].LIFE < 0) {
                 gGame.isOn = false
                 gameOverBaby('lose')
