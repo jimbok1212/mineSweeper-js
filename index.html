@@ -11,20 +11,20 @@
 
 <body oncontextmenu="return false;" onload="initGame(0)">
     <header class="header">
-        <span class="minutes"></span>:<span class="seconds"></span>
-
-        <div class="level-select">
-            <button onclick="initGame(0)">0</button>
-            <button onclick="initGame(1)">1</button>
-            <button onclick="initGame(2)">2</button>
-        </div>
+        <img src="images\minesweeper.png">
     </header>
-    <div class="lifes">❤</div>
-    <table>
-        <tbody class="board">
-        </tbody>
+        <span class="minutes"></span>:<span class="seconds"></span>
+        <div class="level-select">
+            <button class="btn easy" onclick="initGame(0)">Easy</button>
+            <button class="btn medium" onclick="initGame(1)">Medium</button>
+            <button class="btn hard" onclick="initGame(2)">Hard</button> 
+        </div>
+    <div class="lifes"></div>
+    <div class="smiley" onclick="resetGame()"></div>
+    <div class="hint" onclick="resetGame()"></div>
+    <table class="board">
     </table>
-
+    <div class="you-lost"></div>
     <script src="js/utils.js"></script>
     <script src="js/game.js"></script>
 </body>
